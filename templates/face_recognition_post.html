@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>主页</title>
+
+    <meta name="keywords" >
+    <meta name="description">
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="../static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="../static/css/animate.css" rel="stylesheet">
+    <link href="../static/css/style.css?v=4.1.0" rel="stylesheet">
+
+
+
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span><img alt="image" class="img-circle" src="../static/img/profile_small.jpg" /></span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                               <span class="block m-t-xs"><strong class="font-bold">欢迎:admin</strong></span>
+                                <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="J_menuItem" href="../404">修改头像</a>
+                                </li>
+                                <li><a class="J_menuItem" href="../404">个人资料</a>
+                                </li>
+                                <li><a class="J_menuItem" href="../404">联系我们</a>
+                                </li>
+                                <li><a class="J_menuItem" href="../404">信箱</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="../login">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">囧
+                        </div>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="../index"><i class="glyphicon glyphicon-grain"></i> <span class="nav-label">项目介绍</span></a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="../face_recognition"><i class="glyphicon glyphicon-user"></i> <span class="nav-label">人脸检测</span></a>
+                    </li>
+                   <!--  <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span class="nav-label">人脸检测与识别</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="#" data-index="0">人脸识别</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="#" data-index="0">人脸检测</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a class="J_menuItem" href="../object_recognition"><i class="glyphicon glyphicon-eye-open"></i> <span class="nav-label">物体检测</span></a>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            <span class="nav-label">爬虫</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="#">爬取淘宝</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="#">爬取百度</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                            <div class="form-group">
+                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li class="dropdown hidden-xs">
+                            <a class="right-sidebar-toggle" aria-expanded="false">
+                                <i class="fa fa-tasks"></i> 主题
+                            </a>
+                        </li>
+                        <li class="hidden-xs">
+                            <a href="../login" class="J_menuItem" data-index="0"><i class="glyphicon glyphicon-off"></i> 退出</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+<!--开始写代码-->
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>识别结果:{{ content }}</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content ">
+                        <div class="carousel slide" id="carousel2">
+
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img alt="image" class="img-responsive" src="../static/face_img/face.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary btn-rounded btn-block" href="../face_recognition"><i class="fa fa-info-circle"></i> 返回再次识别按钮</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--结束写代码-->
+             <div class="footer">
+                    <div  class="pull-right" >&copy; 2018 <a href="" target="_blank">designed by luojunyu</a>
+                    <!--style="position: absolute; bottom: 10px; right: 10px;"-->
+                    </div>
+                </div>
+        </div>
+
+        <!--右侧部分结束-->
+        <!--右侧边栏开始-->
+        <div id="right-sidebar">
+            <div class="sidebar-container">
+
+                <ul class="nav nav-tabs navs-3">
+
+                    <li class="active">
+                        <a data-toggle="tab" href="#tab-1">
+                            <i class="fa fa-gear"></i> 主题
+                        </a>
+                    </li>>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane active">
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-comments-o"></i> 主题设置</h3>
+                            <small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
+                        </div>
+                        <div class="skin-setttings">
+                            <div class="title">主题设置</div>
+                            <div class="setings-item">
+                                <span>收起左侧菜单</span>
+                                <div class="switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu">
+                                        <label class="onoffswitch-label" for="collapsemenu">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setings-item">
+                                <span>固定顶部</span>
+
+                                <div class="switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox" id="fixednavbar">
+                                        <label class="onoffswitch-label" for="fixednavbar">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setings-item">
+                                <span>
+                        固定宽度
+                    </span>
+
+                                <div class="switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox" id="boxedlayout">
+                                        <label class="onoffswitch-label" for="boxedlayout">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">皮肤选择</div>
+                            <div class="setings-item default-skin nb">
+                                <span class="skin-name ">
+                         <a href="#" class="s-skin-0">
+                             默认皮肤
+                         </a>
+                    </span>
+                            </div>
+                            <div class="setings-item blue-skin nb">
+                                <span class="skin-name ">
+                        <a href="#" class="s-skin-1">
+                            蓝色主题
+                        </a>
+                    </span>
+                            </div>
+                            <div class="setings-item yellow-skin nb">
+                                <span class="skin-name ">
+                        <a href="#" class="s-skin-3">
+                            黄色/紫色主题
+                        </a>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--右侧边栏结束-->
+        <!--mini聊天窗口开始-->
+        <div class="small-chat-box fadeInRight animated">
+
+            <div class="heading" draggable="true">
+                <small class="chat-date pull-right">
+                    2018.6.1
+                </small> 与 luojunyu 聊天中
+            </div>
+
+            <div class="content">
+
+                <div class="left">
+                    <div class="author-name">
+                        luojunyu <small class="chat-date">
+                        10:02
+                    </small>
+                    </div>
+                    <div class="chat-message active">
+                        你好
+                    </div>
+
+                </div>
+                <div class="right">
+                    <div class="author-name">
+                        游客
+                        <small class="chat-date">
+                            11:24
+                        </small>
+                    </div>
+                    <div class="chat-message">
+                        hello word
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-chat">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control"> <span class="input-group-btn"> <button
+                        class="btn btn-primary" type="button">发送
+                </button> </span>
+                </div>
+            </div>
+
+        </div>
+        <div id="small-chat">
+            <span class="badge badge-warning pull-right">2</span>
+            <a class="open-small-chat">
+                <i class="fa fa-comments"></i>
+
+            </a>
+        </div>
+        <!--mini聊天窗口结束-->
+    </div>
+
+    <!-- 全局js -->
+    <script src="../static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="../static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../static/js/plugins/layer/layer.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="../static/js/hplus.js?v=4.1.0"></script>
+    <script src="../static/js/content.js?v=1.0.0"></script>
+    <script type="text/javascript" src="js/contabs.js"></script>
+
+    <!-- 第三方插件 -->
+    <script src="../static/js/plugins/pace/pace.min.js"></script>
+
+</body>
+
+</html>
